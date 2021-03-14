@@ -56,7 +56,7 @@ function toRight() {
     const nextPicture = nextItem.querySelector('.gallery__image');
     
     refs.contentPicture.src = nextPicture.dataset.source;
-    
+    refs.contentPicture.alt = nextPicture.alt;
     currentItem = nextItem;
 }
 
@@ -72,6 +72,7 @@ function toLeft() {
     const previousPicture = previousItem.querySelector('.gallery__image');
     
     refs.contentPicture.src = previousPicture.dataset.source;
+    refs.contentPicture.alt = previousPicture.alt;
     currentItem = previousItem;
     
 }
