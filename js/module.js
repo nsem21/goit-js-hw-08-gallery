@@ -23,13 +23,13 @@ function onOpenModule(event) {
         return;
     }
     const currentPicture = event.target;
-    currentItem = currentPicture.closest('.gallery__item');
+    const currentCard = currentPicture.closest('.gallery__item');
     
     refs.module.classList.add('is-open');
           
-    refs.contentPicture.src = currentPicture.dataset.source;
-    refs.contentPicture.alt = currentPicture.alt;
     
+    setCurrentBigPicture(currentPicture, currentCard);
+
     window.addEventListener('keydown', onKeyPress);
     
 }
@@ -44,6 +44,12 @@ function cleanAttributes () {
     refs.contentPicture.alt = '';
 }
 
+function setCurrentBigPicture(currentPicture, currentEl) {
+    refs.contentPicture.src = currentPicture.dataset.source;
+    refs.contentPicture.alt = currentPicture.alt;
+    currentItem = currentEl;
+}
+
 function toRight() {
     let nextItem;
     if (currentItem === gallery.lastElementChild) {
@@ -55,9 +61,8 @@ function toRight() {
     
     const nextPicture = nextItem.querySelector('.gallery__image');
     
-    refs.contentPicture.src = nextPicture.dataset.source;
-    refs.contentPicture.alt = nextPicture.alt;
-    currentItem = nextItem;
+    setCurrentBigPicture(nextPicture, nextItem)
+    
 }
 
 function toLeft() {
@@ -71,10 +76,8 @@ function toLeft() {
    
     const previousPicture = previousItem.querySelector('.gallery__image');
     
-    refs.contentPicture.src = previousPicture.dataset.source;
-    refs.contentPicture.alt = previousPicture.alt;
-    currentItem = previousItem;
-    
+    setCurrentBigPicture(previousPicture, previousItem);
+      
 }
 
 function onKeyPress (event) {
