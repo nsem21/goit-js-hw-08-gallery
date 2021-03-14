@@ -1,6 +1,5 @@
 import  cards from "./gallery-items.js";
 
-console.log(cards);
 
 const galleryRef = document.querySelector('.gallery');
 const galleryMarkup = createPictureCards(cards);
