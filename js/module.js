@@ -40,7 +40,7 @@ function onCloseModule() {
     updateAttributes('','');
 }
 function updateAttributes (src, alt) {
-    refs.contentPicture.src = src
+    refs.contentPicture.src = src;
     refs.contentPicture.alt = alt;
 }
 
