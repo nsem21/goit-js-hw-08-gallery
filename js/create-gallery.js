@@ -1,9 +1,11 @@
 import  cards from "./gallery-items.js";
-console.log(cards);
-const galleryRef = document.querySelector('.gallery');
-const myMarkup = createPictureCards(cards);
 
-galleryRef.insertAdjacentHTML('beforeend', myMarkup);
+console.log(cards);
+
+const galleryRef = document.querySelector('.gallery');
+const galleryMarkup = createPictureCards(cards);
+
+galleryRef.insertAdjacentHTML('beforeend', galleryMarkup);
 
 function createPictureCards(gallery) {
     return gallery
