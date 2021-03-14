@@ -37,6 +37,9 @@ function onOpenModule(event) {
 function onCloseModule() {
     window.removeEventListener('keydown', onKeyPress);
     refs.module.classList.remove('is-open');
+    cleanAttributes();
+}
+function cleanAttributes () {
     refs.contentPicture.src = '';
     refs.contentPicture.alt = '';
 }
