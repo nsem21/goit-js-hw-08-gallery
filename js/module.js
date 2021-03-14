@@ -39,7 +39,7 @@ function onCloseModule() {
     refs.module.classList.remove('is-open');
     updateAttributes('','');
 }
-function updateAttributes (src, alt) {
+function updateAttributes(src, alt) {
     refs.contentPicture.src = src;
     refs.contentPicture.alt = alt;
 }
