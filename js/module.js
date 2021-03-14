@@ -37,16 +37,15 @@ function onOpenModule(event) {
 function onCloseModule() {
     window.removeEventListener('keydown', onKeyPress);
     refs.module.classList.remove('is-open');
-    cleanAttributes();
+    updateAttributes('','');
 }
-function cleanAttributes () {
-    refs.contentPicture.src = '';
-    refs.contentPicture.alt = '';
+function updateAttributes (src, alt) {
+    refs.contentPicture.src = src
+    refs.contentPicture.alt = alt;
 }
 
 function setCurrentBigPicture(currentPicture, currentEl) {
-    refs.contentPicture.src = currentPicture.dataset.source;
-    refs.contentPicture.alt = currentPicture.alt;
+    updateAttributes(currentPicture.dataset.source, currentPicture.alt);
     currentItem = currentEl;
 }
 
