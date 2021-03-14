@@ -28,6 +28,7 @@ function onOpenModule(event) {
     refs.module.classList.add('is-open');
           
     refs.contentPicture.src = currentPicture.dataset.source;
+    refs.contentPicture.alt = currentPicture.alt;
     
     window.addEventListener('keydown', onKeyPress);
     
@@ -36,7 +37,8 @@ function onOpenModule(event) {
 function onCloseModule() {
     window.removeEventListener('keydown', onKeyPress);
     refs.module.classList.remove('is-open');
-    refs.contentPicture.src = ''; 
+    refs.contentPicture.src = '';
+    refs.contentPicture.alt = '';
 }
 
 function toRight() {
